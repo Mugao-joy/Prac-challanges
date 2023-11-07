@@ -31,21 +31,43 @@ let Convention = {
     attendees: Set([Ones,Sheri, Tesh, Flozie,Kuziwa])
 }
 let wedding = {
-    title: "Sheila's Wedding"
-    date = Date()
-    location: "Naivasha"
+    title: "Sheila's Wedding",
+    date: Date("31 December, 2023"),
+    location: "Naivasha",
     attendees: Set([Ones,Sheri, Tesh, Flozie,Kuziwa]) 
 }
 let meeting = {
-    title: "Strategy Meeting"
-    date = Date()
-    location: "Board Room"
+    title: "Strategy Meeting",
+    date: Date("1 November, 2023"),
+    location: "Board Room",
     attendees: Set([Ones,Sheri, Tesh, Flozie,Kuziwa])
 }
 let exhibition = {
-    title: "Furniture Exhibition"
-    date = Date()
-    location: "Sarit"
+    title: "Furniture Exhibition",
+    date: Date("10 November, 2023"),
+    location: "Sarit",
     attendees: Set([Ones,Sheri, Tesh, Flozie,Kuziwa])
 }
+//re-do
+const next7DaysEvents = weeklyevents
+    .filter((weeklyevents) => weeklyevents.date.getTime() <= new Date().getTime() + 7 * 24 * 60)
+    .map(({ title, date, location }) => ({ title, date, location }));
+//weakmap
+const organizers= new WeakMap();
+Convention = {}  
+organizers.set(Convention, "Mr. Ken"); 
+exhibition = {} 
+organizers.set(exhibition, "Mr. Patel Shah");
+//alt- weakmap
+/*const organizers = new WeakMap();
+organizers.set(weeklyevents[0].title, "Mr Ken");
+organizers.set(weeklyevents[1].title, "Mr Patel Shah");*/
+
+//for each
+weeklyevents.forEach(({ title, date }) => {
+    console.log(`Title: ${title}, Date: ${date}`);
+  });
+
+
+
 
