@@ -4,21 +4,12 @@ body{
 .expandable-list{
     list-style: none;
 }
-.list-title1{
-    cursor: pointer;
-    font-weight: bold;
-}
-.list-title2{
-    cursor: pointer;
-    font-weight: bold;
-}
-.list-title3{
+.list-title{
     cursor: pointer;
     font-weight: bold;
 }
 .sub-list{
     margin-left: 20px;
-    display: none;
 }
 .hidden{
     display: none;
